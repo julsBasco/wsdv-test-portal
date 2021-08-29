@@ -8,13 +8,13 @@ function NavBar(props) {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                <Navbar.Brand href="/home">WSDV Web Portal</Navbar.Brand>
+                <Navbar.Brand href="/wsdv-web-portal">WSDV Web Portal</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                            <Nav.Link href="/home">Home</Nav.Link>
-                            <Nav.Link href="/videos">Videos</Nav.Link>
-                            <Nav.Link href="/calendar">Schedule</Nav.Link>
+                            <Nav.Link href="/wsdv-web-portal">Home</Nav.Link>
+                            <Nav.Link href="/wsdv-web-portal/videos">Videos</Nav.Link>
+                            <Nav.Link href="/wsdv-web-portal/calendar">Schedule</Nav.Link>
                     </Nav>
                     <Nav>
                     <Navbar.Collapse className="justify-content-end">

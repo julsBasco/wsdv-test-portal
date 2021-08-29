@@ -11,13 +11,13 @@ function App() {
     return (
         <div>
             <Router>
-                <Route exact path="/home" component={Home} /> 
+                <Route exact path="/wsdv-web-portal" component={Home} /> 
                 <Route exact path="/" component={Home} /> 
-                <Route exact path="/schedule" component={Schedule} /> 
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/cardcollection" component={ CardCollection } />
-                <Route exact path="/pop" component={ Pop } />
-                <Route exact path="/videos" component={ VideoLib } />
+                <Route exact path="/wsdv-web-portal/schedule" component={Schedule} /> 
+                <Route exact path="/wsdv-web-portal/login" component={Login} />
+                <Route exact path="/wsdv-web-portal/cardcollection" component={ CardCollection } />
+                <Route exact path="/wsdv-web-portal/pop" component={ Pop } />
+                <Route exact path="/wsdv-web-portal/videos" component={ VideoLib } />
             </Router>
             
            
