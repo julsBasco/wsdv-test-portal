@@ -1,16 +1,13 @@
 import React from 'react'
-import { Container, Row, Carousel } from 'react-bootstrap'
+import { Row, Container } from 'react-bootstrap'
 import CardCollection from './CardCollection'
-import Footer from './Footer'
-import NavBar from './NavBar'
+
 
 
 function VideoLib() {
     return (
         <div>
-            <>
-                <NavBar />
-            </>
+            
             <>
                 <>
                 <Container >
@@ -35,9 +32,7 @@ function VideoLib() {
             <>
                 
             </>
-            <>
-                <Footer/>
-            </>
+           
    
         </div>
     )

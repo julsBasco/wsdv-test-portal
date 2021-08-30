@@ -1,17 +1,14 @@
 import { Container, Image,  Card, Button, Row } from 'react-bootstrap'
 import Alert from 'react-bootstrap/Alert'
 import React from 'react'
-import NavBar from './NavBar'
 import CardCollection from './CardCollection'
-import Footer from './Footer'
+
 
 
 function Home() {
     return (
         <div>
-              <>
-                <NavBar name="Julian Basco" />
-              </ >
+              
               
                 <div>
                     <Image src="https://i.insider.com/5ef39160f0f41909f84122eb?width=1000&format=jpeg&auto=webp" style={{width: '100%', height: '100vh'}}  />
@@ -57,9 +54,7 @@ function Home() {
 
               </Container>
             </>
-            <>
-              <Footer />
-            </>
+          
 
         </div>
     )
