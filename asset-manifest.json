@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/wsdv-web-portal/static/css/main.05ed4494.chunk.css",
-    "main.js": "/wsdv-web-portal/static/js/main.dc0b1676.chunk.js",
-    "main.js.map": "/wsdv-web-portal/static/js/main.dc0b1676.chunk.js.map",
+    "main.css": "/wsdv-web-portal/static/css/main.aa766579.chunk.css",
+    "main.js": "/wsdv-web-portal/static/js/main.5051e397.chunk.js",
+    "main.js.map": "/wsdv-web-portal/static/js/main.5051e397.chunk.js.map",
     "runtime-main.js": "/wsdv-web-portal/static/js/runtime-main.dfe23b0c.js",
     "runtime-main.js.map": "/wsdv-web-portal/static/js/runtime-main.dfe23b0c.js.map",
-    "static/js/2.67137b37.chunk.js": "/wsdv-web-portal/static/js/2.67137b37.chunk.js",
-    "static/js/2.67137b37.chunk.js.map": "/wsdv-web-portal/static/js/2.67137b37.chunk.js.map",
+    "static/js/2.8970488e.chunk.js": "/wsdv-web-portal/static/js/2.8970488e.chunk.js",
+    "static/js/2.8970488e.chunk.js.map": "/wsdv-web-portal/static/js/2.8970488e.chunk.js.map",
     "index.html": "/wsdv-web-portal/index.html",
-    "static/css/main.05ed4494.chunk.css.map": "/wsdv-web-portal/static/css/main.05ed4494.chunk.css.map",
-    "static/js/2.67137b37.chunk.js.LICENSE.txt": "/wsdv-web-portal/static/js/2.67137b37.chunk.js.LICENSE.txt"
+    "static/css/main.aa766579.chunk.css.map": "/wsdv-web-portal/static/css/main.aa766579.chunk.css.map",
+    "static/js/2.8970488e.chunk.js.LICENSE.txt": "/wsdv-web-portal/static/js/2.8970488e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dfe23b0c.js",
-    "static/js/2.67137b37.chunk.js",
-    "static/css/main.05ed4494.chunk.css",
-    "static/js/main.dc0b1676.chunk.js"
+    "static/js/2.8970488e.chunk.js",
+    "static/css/main.aa766579.chunk.css",
+    "static/js/main.5051e397.chunk.js"
   ]
 }
