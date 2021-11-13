@@ -1,0 +1,42 @@
+.schedule-container {
+  display: grid;
+  width: 500px;
+  height: 150px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  margin: 1%;
+}
+.date-box {
+  display: grid;
+  padding: 20%;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+
+  box-shadow: 35px 0px 48px -33px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 35px 0px 48px -33px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 35px 0px 48px -33px rgba(0, 0, 0, 0.75);
+}
+
+.color-box {
+  color: white;
+}
+
+.details {
+  padding: 5%;
+  padding-left: 7%;
+  height: 100%;
+  width: 100%;
+  margin-left: 0%;
+  margin-bottom: 0%;
+}
+
+.details h3 {
+  font-size: 1.5rem;
+}
+
+.margin-t-sm {
+  margin-top: 5%;
+}

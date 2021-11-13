@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, onAuthStateChanged } from "firebase/auth"
 
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyD_HKFcESvPZ2v6oPaMSVPAtGhvCGS3bWc",
 

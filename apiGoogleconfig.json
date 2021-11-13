@@ -1,0 +1,11 @@
+{
+    "clientId": "846328767783-8n01e801o7o851lcll7c2aiq8u5bh7k9.apps.googleusercontent.com",
+    "apiKey": "AIzaSyBO9nt1OKvq7JAw1R_cZesroOi-J5Od-0Q",
+    "scope": "https://www.googleapis.com/auth/calendar",
+    "discoveryDocs": [
+      
+      "https://www.googleapis.com/calendar/v3/calendars/m4gv559eu6edt9721u37odhoeo@group.calendar.google.com/events"
+    ]
+  }
+
+  // "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",

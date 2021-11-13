@@ -1,0 +1,17 @@
+a.color__link{
+    color: gray !important;
+    text-decoration: none !important;
+}
+
+a:hover.color__link {
+    color: gray !important;
+}
+
+a.color__dropdown{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+a:hover.color__dropdown {
+    color: black !important;
+}
