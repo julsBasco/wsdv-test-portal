@@ -5,7 +5,6 @@ import { Link, useHistory } from "react-router-dom";
 import { ToLogoutSession } from "./ToLogoutSession";
 import "./CSS/NavBar.css";
 import logo from "../img/logo1.png";
-import { UpdateTracker } from "./Trackers/UpdateTracker";
 
 function NavBar() {
   const [error, setError] = useState("");

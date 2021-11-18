@@ -103,13 +103,13 @@ function Home() {
             </Card.Body>
           </Card>
         ) : (
-          console.log("loading")
+          <div> loading </div>
         )}
       </Container>
 
       <Container>
         <div className="d-inline-flex flex-wrap justify-content-center">
-          {home ? home : console.log("loading")}
+          {home ? home : <div> loading </div>}
         </div>
       </Container>
     </div>
