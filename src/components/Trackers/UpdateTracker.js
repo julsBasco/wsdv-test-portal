@@ -38,34 +38,28 @@ const day = [
   "SATURDAY",
 ];
 
+const updateAttendance = (attendance) => {};
 export const UpdateTracker = async (username) => {
   // get data from db
 
   const userDoc = doc(db, "users", username);
   const getUserDoc = await getDoc(userDoc);
   const snapUserDoc = getUserDoc.data();
-  let attendance = snapUserDoc.attendance;
+  var attendanceDB = snapUserDoc.attendance;
 
-  if (snapUserDoc.date === undefined) {
-    if (attendance) {
-      attendance += 1;
-    } else {
-      attendance = 1;
-    }
+  if ((await snapUserDoc.date) === undefined) {
+    await updateDoc(userDoc, {
+      date: date,
+      time: time,
+      day: day[serverDate.getDay()],
+      attendance: 1,
+    });
+  } else if ((await snapUserDoc.date) !== date) {
+    await updateDoc(userDoc, {
+      date: date,
+      time: time,
+      day: day[serverDate.getDay()],
+      attendance: attendanceDB + 1,
+    });
   }
-  if (snapUserDoc.date !== date) {
-    if (attendance) {
-      attendance += 1;
-    } else {
-      attendance = 1;
-    }
-  }
-
-  // push data to db
-  await updateDoc(userDoc, {
-    date: date,
-    time: time,
-    day: day[serverDate.getDay()],
-    attendance: attendance,
-  });
 };

@@ -83,7 +83,7 @@ function Home() {
           }}
         />
       </div>
-      <>
+      {/* <>
         <Alert variant="secondary" style={{ magin: "0%" }}>
           Information: We will be having our quick meeting today. New here?{" "}
           <Alert.Link>Click here</Alert.Link> to check the schedules
@@ -111,7 +111,7 @@ function Home() {
         <div className="d-inline-flex flex-wrap justify-content-center">
           {home ? home : <div> loading </div>}
         </div>
-      </Container>
+      </Container> */}
     </div>
   );
 }

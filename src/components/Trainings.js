@@ -4,8 +4,8 @@ import NavBar from "./NavBar";
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import SubHero from "./SubHero";
-import Button from "react-bootstrap/Button";
-import MainModal from "./modals/MainModal";
+import AccordionToModal from "./modals/AccordionToModal";
+import { Accordion, Container } from "react-bootstrap";
 
 const Trainings = () => {
   const firebaseConfig = {
@@ -27,6 +27,7 @@ const Trainings = () => {
   const db = getFirestore(app);
 
   const [data, setData] = useState();
+  const [moreItems, setMoreItems] = useState([]);
 
   const [error, setError] = useState("");
 
@@ -34,56 +35,90 @@ const Trainings = () => {
 
   const fetchData = async () => {
     const docRef = doc(db, "data", "RSVp8ljO95Dpwa0oSs0G");
-
     const docSnap = await getDoc(docRef);
-
     const dataTest = docSnap.data();
-
     await setData(dataTest);
+  };
+
+  const generateAccordionItems = async () => {
+    const accordionPath = doc(db, "data", "PZMKLMYycZ8gz3noquB7");
+    const accordionSnap = await getDoc(accordionPath);
+    const accordionItems = await accordionSnap.data().moreItems;
+    const containerArray = [];
+    for (let i = 0; i < accordionItems.length; i++) {
+      containerArray.push(
+        <AccordionToModal
+          number={i}
+          key={i}
+          title={accordionItems[i].title}
+          url={accordionItems[i].url}
+        />
+      );
+    }
+
+    await setMoreItems(containerArray);
   };
 
   useEffect(() => {
     fetchData();
+    generateAccordionItems();
   }, []);
 
   return (
-    <div style={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}>
+    <div>
       <NavBar />
 
-      {/* Start of SubHero */}
-
-      <SubHero
-        title="TRAINING"
-        backgroundImage="https://images.unsplash.com/photo-1499188073299-5bd9060e044b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
-      />
-
-      {/* End of SubHero */}
-
       {/* Start of Useful Documents */}
-      <div className="bg-light bg-gradient">
-        <section style={{ padding: "5%", textAlign: "center" }}>
+
+      <div
+        style={{
+          height: "85vh",
+          width: "100%",
+          overflow: "scroll",
+          overflowX: "hidden",
+        }}
+      >
+        {/* Start of SubHero */}
+
+        <SubHero
+          title="TRAINING"
+          backgroundImage="https://images.unsplash.com/photo-1499188073299-5bd9060e044b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
+        />
+
+        {/* End of SubHero */}
+
+        <img
+          src="https://images.unsplash.com/photo-1510265382668-7b564935d7b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+          style={{
+            opacity: "0.5",
+            position: "fixed",
+            top: "0px",
+            width: "100%",
+            zIndex: "-1",
+          }}
+        />
+        <section
+          style={{ paddingTop: "5%", textAlign: "center", zIndex: "10" }}
+        >
           <div>
-            <div className="">
+            <div>
               <h1>USEFUL DOCUMENTS</h1>
 
               <p>Learn more about your disabilities and benefits</p>
             </div>
           </div>
-
-          <section
-            className="d-flex  justify-content-center container"
-            style={{ padding: "5%" }}
-          >
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() => setModalShow(true)}
-            >
-              Rating Table
-            </Button>
-          </section>
-
-          <MainModal show={modalShow} onHide={() => setModalShow(false)} />
+          <Container>
+            <h1> HOW TO WRITE A PERSONAL STATEMENT </h1>
+            <Accordion>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="Writing a Personal Statement"
+                url="https://drive.google.com/file/d/14e0Hzks5x1xz5OefJcaiaYmBaHYnWI7H/preview"
+              />
+            </Accordion>
+            <h1> RATING TABLES </h1>
+            <Accordion>{moreItems}</Accordion>
+          </Container>
         </section>
       </div>
 
@@ -95,37 +130,3 @@ const Trainings = () => {
 };
 
 export default Trainings;
-
-{
-  /* <iframe
-            src="https://drive.google.com/file/d/1C_ADDX85ASADRnthj10eodcNithw-5if/preview"
-            width="640"
-            height="480"
-            allow="autoplay"
-          ></iframe>
-
-          <div
-            style={{ width: "640px", height: "480px", position: "relative" }}
-          >
-            <iframe
-              src="https://drive.google.com/file/d/1C_ADDX85ASADRnthj10eodcNithw-5if/preview"
-              width="640"
-              height="480"
-              frameborder="0"
-              scrolling="no"
-              seamless=""
-            />
-
-            <div
-              style={{
-                width: "80px",
-                height: "80px",
-                position: "absolute",
-                opacity: "0",
-                right: "0px",
-                top: "0px",
-              }}
-            >
-              &nbsp;
-            </div> */
-}

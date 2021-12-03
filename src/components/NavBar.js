@@ -41,13 +41,13 @@ function NavBar() {
                 <Link className="nav-link" to="/">
                   Home
                 </Link>
-                <Link className="nav-link" to="/videos">
+                <Link className="nav-link" to="/videos" hidden>
                   Videos
                 </Link>
                 <Link className="nav-link" to="/trainings">
                   Training
                 </Link>
-                <Link className="nav-link" to="/events">
+                <Link className="nav-link" to="/events" hidden>
                   Events
                 </Link>
               </Nav>

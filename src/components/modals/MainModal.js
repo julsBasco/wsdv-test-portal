@@ -1,42 +1,42 @@
-import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Modal, Button, Form, Container, Accordion } from "react-bootstrap";
+import AccordionToModal from "./AccordionToModal";
 
 const MainModal = (props) => {
+  const [modalItems, setModalItems] = useState([]);
+  const generateItems = () => {
+    const testItems = [];
+    for (let i = 0; i < moreItems.length; i++) {
+      testItems.push(
+        <AccordionToModal
+          number={i}
+          key={i}
+          title={moreItems[i].title}
+          url={moreItems[i].url}
+        />
+      );
+    }
+    setModalItems(testItems);
+  };
+
+  useEffect(() => {
+    generateItems(props.items);
+  }, []);
   return (
     <Modal
-      {...props}
-      size="lg"
+      show={props.show}
+      onHide={props.onHide}
+      size="xl"
       aria-labelledby="contained-modal-title-vcenter"
+      scrollable="true"
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Sample</Modal.Title>
+        <h4> RATING TABLE </h4>
       </Modal.Header>
       <Modal.Body>
-        <h4>Sample</h4>
-        <div style={{ width: "640px", height: "480px", position: "relative" }}>
-          <iframe
-            src="https://drive.google.com/file/d/1pBerHsy_leeN4rFAStM9oSpOJWTiPlHE/preview"
-            width="640"
-            height="480"
-            frameborder="0"
-            scrolling="no"
-            seamless=""
-          />
-
-          <div
-            style={{
-              width: "80px",
-              height: "80px",
-              position: "absolute",
-              opacity: "0",
-              right: "0px",
-              top: "0px",
-            }}
-          >
-            &nbsp;
-          </div>
-        </div>
+        <Accordion>{modalItems}</Accordion>
+        <Container></Container>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
