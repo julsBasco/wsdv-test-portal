@@ -108,16 +108,19 @@ const Trainings = () => {
             </div>
           </div>
           <Container>
-            <h1> HOW TO WRITE A PERSONAL STATEMENT </h1>
-            <Accordion>
+            <h1 style={{ marginTop: "5%" }}>
+              {" "}
+              HOW TO WRITE A PERSONAL STATEMENT{" "}
+            </h1>
+            <Accordion style={{ marginTop: "5%" }}>
               <AccordionToModal
                 number={moreItems.length + 1}
                 title="Writing a Personal Statement"
                 url="https://drive.google.com/file/d/14e0Hzks5x1xz5OefJcaiaYmBaHYnWI7H/preview"
               />
             </Accordion>
-            <h1> RATING TABLES </h1>
-            <Accordion>{moreItems}</Accordion>
+            <h1 style={{ marginTop: "5%" }}> RATING TABLES </h1>
+            <Accordion style={{ marginTop: "5%" }}>{moreItems}</Accordion>
           </Container>
         </section>
       </div>
