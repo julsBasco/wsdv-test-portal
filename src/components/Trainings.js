@@ -5,7 +5,8 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import SubHero from "./SubHero";
 import AccordionToModal from "./modals/AccordionToModal";
-import { Accordion, Container } from "react-bootstrap";
+import { Accordion, Container, Button } from "react-bootstrap";
+import { UpdateData } from "./Trackers/UpdateData";
 
 const Trainings = () => {
   const firebaseConfig = {
@@ -27,11 +28,25 @@ const Trainings = () => {
   const db = getFirestore(app);
 
   const [data, setData] = useState();
+
   const [moreItems, setMoreItems] = useState([]);
 
   const [error, setError] = useState("");
 
   const [modalShow, setModalShow] = useState(false);
+
+  const iFrameInAccordion = (url) => {
+    return (
+      <iframe
+        src={url}
+        width="100%"
+        height="480"
+        frameBorder="0"
+        scrolling="no"
+        seamless=""
+      />
+    );
+  };
 
   const fetchData = async () => {
     const docRef = doc(db, "data", "RSVp8ljO95Dpwa0oSs0G");
@@ -45,13 +60,29 @@ const Trainings = () => {
     const accordionSnap = await getDoc(accordionPath);
     const accordionItems = await accordionSnap.data().moreItems;
     const containerArray = [];
+
     for (let i = 0; i < accordionItems.length; i++) {
+      const bodyAccordion = [];
+      accordionItems[i].urls.forEach((element, index) => {
+        bodyAccordion.push(
+          <Button
+            type="button"
+            style={{ margin: "1%" }}
+            target="_blank"
+            key={"button_" + element.title + index}
+            href={element.url}
+          >
+            {element.title}
+          </Button>
+        );
+      });
+
       containerArray.push(
         <AccordionToModal
           number={i}
-          key={i}
-          title={accordionItems[i].title}
-          url={accordionItems[i].url}
+          uniqueKey={"main" + accordionItems[i].category + i}
+          title={accordionItems[i].category}
+          insideAccordion={bodyAccordion}
         />
       );
     }
@@ -109,6 +140,20 @@ const Trainings = () => {
           </div>
           <Container>
             <h1 style={{ marginTop: "5%" }}>
+              14 MENTAL HEALTH SYMPTOMS EXPLAINED
+            </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="14 Mental Health Sypmtoms Explained"
+                uniqueKey="mainOutside_2"
+                insideAccordion={iFrameInAccordion(
+                  "https://drive.google.com/file/d/1jP099igPHfjkU-zLcIKd-hG3NZTf6mER/preview"
+                )}
+              />
+            </Accordion>
+
+            <h1 style={{ marginTop: "5%" }}>
               {" "}
               HOW TO WRITE A PERSONAL STATEMENT{" "}
             </h1>
@@ -116,11 +161,72 @@ const Trainings = () => {
               <AccordionToModal
                 number={moreItems.length + 1}
                 title="Writing a Personal Statement"
-                url="https://drive.google.com/file/d/14e0Hzks5x1xz5OefJcaiaYmBaHYnWI7H/preview"
+                uniqueKey="mainOutside_1"
+                insideAccordion={iFrameInAccordion(
+                  "https://drive.google.com/file/d/14e0Hzks5x1xz5OefJcaiaYmBaHYnWI7H/preview"
+                )}
               />
             </Accordion>
-            <h1 style={{ marginTop: "5%" }}> RATING TABLES </h1>
+
+            <h1 style={{ marginTop: "5%" }}> RATED CONDITIONS </h1>
+
             <Accordion style={{ marginTop: "5%" }}>{moreItems}</Accordion>
+
+            <h1 style={{ marginTop: "5%" }}> URGENT CARE BENEFIT </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="Urgent Care Benefit"
+                uniqueKey="mainOutside_2"
+                insideAccordion={iFrameInAccordion(
+                  "https://drive.google.com/file/d/1dAW0POqeGmRebGJt7xu-ebrLs2VPrAkl/preview"
+                )}
+              />
+            </Accordion>
+
+            <h1 style={{ marginTop: "5%" }}> TEMPORARY 100% RATINGS </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="Temporary 100% Ratings"
+                uniqueKey="mainOutside_2"
+                insideAccordion={iFrameInAccordion(
+                  "https://drive.google.com/file/d/1ICAPl_yjhCK5dbDuH9fGuj4mm1jRQv1E/preview"
+                )}
+              />
+            </Accordion>
+
+            <h1 style={{ marginTop: "5%" }}>
+              {" "}
+              DISABILITY COMPENSATION LETTER{" "}
+            </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="Disability Compensation letter"
+                uniqueKey="mainOutside_2"
+                insideAccordion={
+                  <Button
+                    href="https://drive.google.com/file/d/18W3Fuwia4WFtHXSmVkR4l8UiWPyb1Pqy/"
+                    target="_blank"
+                  >
+                    Disability Compensation Letter
+                  </Button>
+                }
+              />
+            </Accordion>
+
+            <h1 style={{ marginTop: "5%" }}> CHAMPVA </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="CHAMPVA"
+                uniqueKey="mainOutside_2"
+                insideAccordion={iFrameInAccordion(
+                  "https://drive.google.com/file/d/1pJHThMFpyJsN0g5S0_Lz27OgQTMUsvm8/preview"
+                )}
+              />
+            </Accordion>
           </Container>
         </section>
       </div>
