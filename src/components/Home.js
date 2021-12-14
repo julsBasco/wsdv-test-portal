@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Image, Card, Button } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 import CardCollection from "./CardCollection";
 import "./CSS/Home.css";
 import { useAuth } from "../contexts/AuthContext";
@@ -58,8 +60,37 @@ function Home() {
     updateTracker();
   }, []);
   return (
-    <div>
-      <div className="hero-container">
+    <div className="homeBody">
+      <NavBar />
+
+      <section className="heroSection">
+        <div className="heroTitle">
+          <h1>LETS BUILD YOUR</h1>
+          <h1 className="textWhite">STRATEGY</h1>
+          <p>
+            Learn from our amazing coaches and build a winning strategy tailored
+            to your success
+          </p>
+        </div>
+
+        <div className="ceoGreetings">
+          <p>
+            Hello, and welcome to WSDV's portal! I'm Derek Jones, CEO of WSDV
+            and am very excited to have an opportunity to change your life! Feel
+            free to navigate our wealth of free information provided to our
+            clients only. If you have any questions at all concerning this page,
+            please contact your coach or message me. My ultimate goal is to
+            assist you in getting the rating you truly deserve for serving our
+            great nation.
+          </p>
+        </div>
+
+        <Image
+          className="imgOverlay"
+          src="https://images.unsplash.com/photo-1464462605615-4ff728ecc301?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+        />
+      </section>
+      {/* <div className="hero-container">
         <div className="hero-overlay">
           <div className="hero-wrapper-overlay">
             <h1 className="hero-text-h1">
@@ -73,6 +104,12 @@ function Home() {
             </h3>
           </div>
         </div>
+        <div className="hero-message-ceo">
+          <h3 style={{ textAlign: "center", padding: "5%" }}>
+            Hello, and welcome to WSDV's portal! I'm Derek Jones, CEO of WSDV
+            and am very e
+          </h3>
+        </div>
         <Image
           src="https://images.unsplash.com/photo-1464462605615-4ff728ecc301?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
           style={{
@@ -82,7 +119,7 @@ function Home() {
             gridRow: "1",
           }}
         />
-      </div>
+      </div> */}
       {/* <>
         <Alert variant="secondary" style={{ magin: "0%" }}>
           Information: We will be having our quick meeting today. New here?{" "}
@@ -112,6 +149,7 @@ function Home() {
           {home ? home : <div> loading </div>}
         </div>
       </Container> */}
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "../contexts/AuthContext";
-import Dashboard from "./Dashboard";
+import Home from "./Home";
 import Login from "./Login";
 import VideoLib from "./VideoLib";
 import Schedule from "./Schedule";
@@ -15,8 +15,8 @@ function App() {
       <Router>
         <AuthProvider>
           <Switch>
-            <PrivateRoute exact path="/" component={Dashboard} />
-            <PrivateRoute exact path="/home" component={Dashboard} />
+            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/home" component={Home} />
             <PrivateRoute exact path="/videos" component={VideoLib} />
             <PrivateRoute exact path="/schedule" component={Schedule} />
             <PrivateRoute exact path="/trainings" component={Trainings} />

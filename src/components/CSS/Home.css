@@ -1,19 +1,92 @@
-.hero-container {
+.heroSection {
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 43px - 76px);
+  padding: 5%;
+  background: rgb(43, 208, 219);
+  background: linear-gradient(45deg, rgb(43, 207, 219), rgba(27, 5, 180, 1));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroTitle {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroTitle h1 {
+  font-weight: bolder;
+  font-size: 4rem;
+}
+
+.heroTitle p {
+  font-size: 1.5rem;
+}
+
+.textWhite {
+  color: white;
+}
+
+.ceoGreetings {
+  align-self: center;
+}
+
+.ceoGreetings p {
+}
+
+.imgOverlay {
+  display: none;
+}
+
+@media only screen and (min-width: 598px) {
+  .heroSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+  .heroTitle {
+    grid-area: 1/2/2/3;
+    padding: 5%;
+  }
+
+  .ceoGreetings {
+    grid-area: 1/1/2/2;
+    padding: 5%;
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0.513);
+    z-index: 10;
+  }
+
+  .ceoGreetings p {
+    font-size: x-large;
+    text-align: justify;
+  }
+}
+
+/* .hero-container {
+  width: 100%;
+  height: auto;
   display: grid;
-  grid-template-rows: 90vh;
-  grid-template-columns: repeat(1fr, 2);
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .hero-wrapper-overlay {
-  grid-column: 2;
+  padding: 5%;
   justify-self: center;
   align-self: center;
 }
 
+.hero-messeage-ceo {
+  grid-area: 1/1/1/1;
+}
+
 .hero-overlay {
-  height: 90vh;
+  grid-area: 1/2/2/3;
+  height: auto;
   background: rgb(43, 208, 219);
   background: linear-gradient(
     90deg,
@@ -24,18 +97,17 @@
   grid-column: 1 / span 2;
   grid-row: 1;
   z-index: 2;
-  display: grid;
   grid-template-columns: 50% 50%;
 }
 
 .hero-text-h1 {
   font-weight: bolder;
   text-align: center;
-  font-size: 5rem;
+  font-size: 4rem;
   overflow: hidden;
 }
 
-@media only screen and (max-width: 991px) {
+/* @media only screen and (max-width: 991px) {
   .hero-container {
     grid-template-columns: 1fr;
   }
@@ -51,4 +123,4 @@
     grid-row: 1;
     grid-template-columns: none;
   }
-}
+} */

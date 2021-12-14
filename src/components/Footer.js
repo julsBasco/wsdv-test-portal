@@ -6,17 +6,7 @@ function Footer() {
   return (
     <div>
       <>
-        <Navbar
-          bg="dark"
-          variant="dark"
-          fixec="bottom"
-          style={{
-            position: "absolute",
-            width: "100%",
-            bottom: "0px",
-            zIndex: "100",
-          }}
-        >
+        <Navbar bg="dark" variant="dark" fixed="bottom">
           <Container>
             <Navbar.Brand href="#home"></Navbar.Brand>
 
