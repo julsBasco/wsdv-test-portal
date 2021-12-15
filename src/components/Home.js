@@ -62,7 +62,8 @@ function Home() {
   return (
     <div className="homeBody">
       <NavBar />
-
+      <div className="forBackgroundOverlay1"> </div>
+      <div className="forBackgroundOverlay2"></div>
       <section className="heroSection">
         <div className="heroTitle">
           <h1>LETS BUILD YOUR</h1>
@@ -119,8 +120,8 @@ function Home() {
             gridRow: "1",
           }}
         />
-      </div> */}
-      {/* <>
+      </div> */
+      /* <>
         <Alert variant="secondary" style={{ magin: "0%" }}>
           Information: We will be having our quick meeting today. New here?{" "}
           <Alert.Link>Click here</Alert.Link> to check the schedules
