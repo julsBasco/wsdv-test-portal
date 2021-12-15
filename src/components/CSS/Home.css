@@ -69,12 +69,12 @@
     text-align: justify;
   }
 
-  /* .forBackgroundOverlay1 {
+  .forBackgroundOverlay1 {
     position: fixed;
-    width: 100%;
+    width: 50vw;
     height: 100vh;
-    background-image: url("../../img/hero.jpg");
-    opacity: 0.5;
+    background-image: url("https://images.unsplash.com/photo-1464462605615-4ff728ecc301?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");
+    opacity: 0.7;
     background-size: cover;
     background-repeat: no-repeat;
     mix-blend-mode: luminosity;
@@ -83,13 +83,14 @@
     position: fixed;
     background: rgb(43, 208, 219);
     background: linear-gradient(
-      45deg,
+      90deg,
       rgba(22, 216, 230, 0.733),
-      rgba(28, 5, 180, 0.767)
+      rgba(28, 5, 180, 1),
+      rgba(22, 216, 230, 0.733)
     );
     width: 100%;
     height: 100vh;
-  } */
+  }
 }
 
 /* .hero-container {

@@ -7,6 +7,7 @@ import SubHero from "./SubHero";
 import AccordionToModal from "./modals/AccordionToModal";
 import { Accordion, Container, Button } from "react-bootstrap";
 import { UpdateData } from "./Trackers/UpdateData";
+import trainingBackground from "../img/training-background.jpg";
 
 const Trainings = () => {
   const firebaseConfig = {
@@ -100,6 +101,17 @@ const Trainings = () => {
       <NavBar />
 
       {/* Start of Useful Documents */}
+      <div
+        style={{
+          backgroundImage: `url(${trainingBackground})`,
+          backgroundSize: "cover",
+          opacity: ".3",
+          position: "fixed",
+          width: "100vw",
+          height: "100vh",
+          zIndex: "-1",
+        }}
+      ></div>
 
       <div
         style={{
@@ -118,16 +130,6 @@ const Trainings = () => {
 
         {/* End of SubHero */}
 
-        <img
-          src="https://images.unsplash.com/photo-1510265382668-7b564935d7b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-          style={{
-            opacity: "0.5",
-            position: "fixed",
-            top: "0px",
-            width: "100%",
-            zIndex: "-1",
-          }}
-        />
         <section
           style={{ paddingTop: "5%", textAlign: "center", zIndex: "10" }}
         >
