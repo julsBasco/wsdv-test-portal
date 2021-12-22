@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/wsdv-web-portal/static/css/main.23894a36.chunk.css",
-    "main.js": "/wsdv-web-portal/static/js/main.9b201033.chunk.js",
-    "main.js.map": "/wsdv-web-portal/static/js/main.9b201033.chunk.js.map",
-    "runtime-main.js": "/wsdv-web-portal/static/js/runtime-main.dfe23b0c.js",
-    "runtime-main.js.map": "/wsdv-web-portal/static/js/runtime-main.dfe23b0c.js.map",
-    "static/js/2.d526cb05.chunk.js": "/wsdv-web-portal/static/js/2.d526cb05.chunk.js",
-    "static/js/2.d526cb05.chunk.js.map": "/wsdv-web-portal/static/js/2.d526cb05.chunk.js.map",
-    "index.html": "/wsdv-web-portal/index.html",
-    "static/css/main.23894a36.chunk.css.map": "/wsdv-web-portal/static/css/main.23894a36.chunk.css.map",
-    "static/js/2.d526cb05.chunk.js.LICENSE.txt": "/wsdv-web-portal/static/js/2.d526cb05.chunk.js.LICENSE.txt",
-    "static/media/flag_bg0.498f5622.png": "/wsdv-web-portal/static/media/flag_bg0.498f5622.png",
-    "static/media/Home.css": "/wsdv-web-portal/static/media/hero.48f48657.jpg",
-    "static/media/Login.css": "/wsdv-web-portal/static/media/login.46be4fb0.jpg",
-    "static/media/logo1.39f7cde5.png": "/wsdv-web-portal/static/media/logo1.39f7cde5.png",
-    "static/media/training-background.482eb3d0.jpg": "/wsdv-web-portal/static/media/training-background.482eb3d0.jpg"
+    "main.css": "/wsdv-test-portal/static/css/main.cdc7c25c.chunk.css",
+    "main.js": "/wsdv-test-portal/static/js/main.366f8e9b.chunk.js",
+    "main.js.map": "/wsdv-test-portal/static/js/main.366f8e9b.chunk.js.map",
+    "runtime-main.js": "/wsdv-test-portal/static/js/runtime-main.ebabbba2.js",
+    "runtime-main.js.map": "/wsdv-test-portal/static/js/runtime-main.ebabbba2.js.map",
+    "static/js/2.2013d3fc.chunk.js": "/wsdv-test-portal/static/js/2.2013d3fc.chunk.js",
+    "static/js/2.2013d3fc.chunk.js.map": "/wsdv-test-portal/static/js/2.2013d3fc.chunk.js.map",
+    "index.html": "/wsdv-test-portal/index.html",
+    "static/css/main.cdc7c25c.chunk.css.map": "/wsdv-test-portal/static/css/main.cdc7c25c.chunk.css.map",
+    "static/js/2.2013d3fc.chunk.js.LICENSE.txt": "/wsdv-test-portal/static/js/2.2013d3fc.chunk.js.LICENSE.txt",
+    "static/media/flag_bg0.498f5622.png": "/wsdv-test-portal/static/media/flag_bg0.498f5622.png",
+    "static/media/Home.css": "/wsdv-test-portal/static/media/hero.48f48657.jpg",
+    "static/media/Login.css": "/wsdv-test-portal/static/media/login.46be4fb0.jpg",
+    "static/media/logo1.39f7cde5.png": "/wsdv-test-portal/static/media/logo1.39f7cde5.png",
+    "static/media/training-background.482eb3d0.jpg": "/wsdv-test-portal/static/media/training-background.482eb3d0.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.dfe23b0c.js",
-    "static/js/2.d526cb05.chunk.js",
-    "static/css/main.23894a36.chunk.css",
-    "static/js/main.9b201033.chunk.js"
+    "static/js/runtime-main.ebabbba2.js",
+    "static/js/2.2013d3fc.chunk.js",
+    "static/css/main.cdc7c25c.chunk.css",
+    "static/js/main.366f8e9b.chunk.js"
   ]
 }
