@@ -10,33 +10,32 @@ import "./CSS/Login.css";
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const { login, logout } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    try {
-      setError("");
-      setLoading(true);
-      const loginTest = await LoginChecker(emailRef.current.value);
-      if (!loginTest) {
-        try {
-          await login(emailRef.current.value, passwordRef.current.value);
-          await PushToDbState(emailRef.current.value);
-          history.push("/");
-        } catch {
-          setError("login Failed please check username/password");
-        }
-      } else {
-        throw "Please logout the other device to login";
-      }
-    } catch (error) {
-      setError(error);
-    }
+    const loginTest = await LoginChecker(emailRef.current.value);
 
-    setLoading(false);
+    if (!loginTest) {
+      setLoading(true);
+      setError("");
+      try {
+        const logLag = await login(emailRef.current.value, passwordRef.current.value);
+        console.log(logLag)
+        await PushToDbState(emailRef.current.value);
+        history.push("/");
+      } catch {
+        setLoading(false);
+        await logout();
+        setError("login Failed please check username/password");
+      }
+    } else {
+      setError("Please logout the other device to login");
+      setLoading(false);
+    }
   }
 
   return (

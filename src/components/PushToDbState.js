@@ -1,18 +1,19 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  updateDoc,
+  setDoc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD_HKFcESvPZ2v6oPaMSVPAtGhvCGS3bWc",
-
-  authDomain: "wsdv-development.firebaseapp.com",
-
-  projectId: "wsdv-development",
-
-  storageBucket: "wsdv-development.appspot.com",
-
-  messagingSenderId: "978428886119",
-
-  appId: "1:978428886119:web:3d7247572fba40344628c2",
+  apiKey: "AIzaSyCYheISxbTluSeR1As2z5M0_rbdEQeA0dw",
+  authDomain: "wsdv-production-a0be7.firebaseapp.com",
+  projectId: "wsdv-production-a0be7",
+  storageBucket: "wsdv-production-a0be7.appspot.com",
+  messagingSenderId: "1002532901142",
+  appId: "1:1002532901142:web:b2799742e960d45bdc8037",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -20,14 +21,21 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export const PushToDbState = async (username) => {
-  const docRef = doc(db, "users", username);
+  const user = username.toLowerCase();
+  const docRef = doc(db, "users", user);
   const docSnap = await getDoc(docRef);
   const dataTest = docSnap.data();
   const date = new Date();
 
-  if (dataTest.state === false) {
-    await updateDoc(doc(db, "users", username), {
+  if (dataTest === undefined) {
+    await setDoc(doc(db, "users", user), {
       state: true,
     });
+    return true;
+  } else if (dataTest.state === false) {
+    await updateDoc(doc(db, "users", user), {
+      state: true,
+    });
+    return true;
   }
 };

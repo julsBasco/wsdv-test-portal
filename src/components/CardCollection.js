@@ -10,7 +10,9 @@ function CardCollection(props) {
         <Card.Img variant="top" src={props.img} />
         <Card.Body>
           <Card.Title> {props.title} </Card.Title>
-          <Card.Text>{props.text}</Card.Text>
+          <Card.Text style={{ height: "5rem", overflow: "auto" }}>
+            {props.text}
+          </Card.Text>
           <Button variant="primary" href={props.url} target="_blank">
             Watch Now
           </Button>

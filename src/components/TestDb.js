@@ -1,50 +1,37 @@
-import React, { useState, useEffect } from 'react'
-import { initializeApp } from "firebase/app"
-import { getFirestore, doc, getDoc} from "firebase/firestore"
+import React, { useState, useEffect } from "react";
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const TestDb = () => {
-    const firebaseConfig = {
-        apiKey: "AIzaSyD_HKFcESvPZ2v6oPaMSVPAtGhvCGS3bWc",
-    
-        authDomain: "wsdv-development.firebaseapp.com",
-      
-        projectId: "wsdv-development",
-      
-        storageBucket: "wsdv-development.appspot.com",
-      
-        messagingSenderId: "978428886119",
-      
-        appId: "1:978428886119:web:3d7247572fba40344628c2"
-      
-    
-    }
-    
-    const app = initializeApp(firebaseConfig)
-    
-    const db = getFirestore(app);
+  const firebaseConfig = {
+    apiKey: "AIzaSyCYheISxbTluSeR1As2z5M0_rbdEQeA0dw",
+    authDomain: "wsdv-production-a0be7.firebaseapp.com",
+    projectId: "wsdv-production-a0be7",
+    storageBucket: "wsdv-production-a0be7.appspot.com",
+    messagingSenderId: "1002532901142",
+    appId: "1:1002532901142:web:b2799742e960d45bdc8037",
+  };
 
-    const [data, setData] = useState({});
+  const app = initializeApp(firebaseConfig);
 
-    const fetchData = () => {
+  const db = getFirestore(app);
 
-      
-            const docRef = doc(db, "data", "RSVp8ljO95Dpwa0oSs0G");
+  const [data, setData] = useState({});
 
-            const docSnap = getDoc(docRef);
+  const fetchData = () => {
+    const docRef = doc(db, "data", "RSVp8ljO95Dpwa0oSs0G");
 
-            const dataTest = docSnap.data();
+    const docSnap = getDoc(docRef);
 
-            setData(dataTest)
+    const dataTest = docSnap.data();
 
-        
+    setData(dataTest);
 
-            console.log("Document data:", dataTest);
-    }
-    useEffect(() => {
-        fetchData();
-    }, {})
+    console.log("Document data:", dataTest);
+  };
+  useEffect(() => {
+    fetchData();
+  }, {});
+};
 
-  
-}
-
-export default TestDb
+export default TestDb;

@@ -11,17 +11,12 @@ import trainingBackground from "../img/training-background.jpg";
 
 const Trainings = () => {
   const firebaseConfig = {
-    apiKey: "AIzaSyD_HKFcESvPZ2v6oPaMSVPAtGhvCGS3bWc",
-
-    authDomain: "wsdv-development.firebaseapp.com",
-
-    projectId: "wsdv-development",
-
-    storageBucket: "wsdv-development.appspot.com",
-
-    messagingSenderId: "978428886119",
-
-    appId: "1:978428886119:web:3d7247572fba40344628c2",
+    apiKey: "AIzaSyCYheISxbTluSeR1As2z5M0_rbdEQeA0dw",
+    authDomain: "wsdv-production-a0be7.firebaseapp.com",
+    projectId: "wsdv-production-a0be7",
+    storageBucket: "wsdv-production-a0be7.appspot.com",
+    messagingSenderId: "1002532901142",
+    appId: "1:1002532901142:web:b2799742e960d45bdc8037",
   };
 
   const app = initializeApp(firebaseConfig);
@@ -57,7 +52,7 @@ const Trainings = () => {
   };
 
   const generateAccordionItems = async () => {
-    const accordionPath = doc(db, "data", "PZMKLMYycZ8gz3noquB7");
+    const accordionPath = doc(db, "data", "ratedConditions");
     const accordionSnap = await getDoc(accordionPath);
     const accordionItems = await accordionSnap.data().moreItems;
     const containerArray = [];
@@ -149,12 +144,28 @@ const Trainings = () => {
                 number={moreItems.length + 1}
                 title="14 Mental Health Sypmtoms Explained"
                 uniqueKey="mainOutside_2"
-                insideAccordion={iFrameInAccordion(
-                  "https://drive.google.com/file/d/1jP099igPHfjkU-zLcIKd-hG3NZTf6mER/preview"
-                )}
+                insideAccordion={
+                  <Button
+                    href="https://drive.google.com/file/d/1jP099igPHfjkU-zLcIKd-hG3NZTf6mER/preview"
+                    target="_blank"
+                  >
+                    14 Mental Health Sypmtoms Explained
+                  </Button>
+                }
               />
             </Accordion>
 
+            <h1 style={{ marginTop: "5%" }}>THE LAY/BUDDY STATEMENT</h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="The Lay Buddy Statement"
+                uniqueKey="mainOutside_7"
+                insideAccordion={iFrameInAccordion(
+                  "https://drive.google.com/file/d/16vDQ8WTG6biTMj2e1KMuwJ-n6KAK2LYE/preview"
+                )}
+              />
+            </Accordion>
             <h1 style={{ marginTop: "5%" }}>
               {" "}
               HOW TO WRITE A PERSONAL STATEMENT{" "}
@@ -167,6 +178,81 @@ const Trainings = () => {
                 insideAccordion={iFrameInAccordion(
                   "https://drive.google.com/file/d/14e0Hzks5x1xz5OefJcaiaYmBaHYnWI7H/preview"
                 )}
+              />
+            </Accordion>
+
+            <h1 style={{ marginTop: "5%" }}>
+              14 TIPS TO A SUCCESSFULL C&P EXAM
+            </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="14 TIPS TO A SUCCESSFULL C&P EXAM"
+                uniqueKey="mainOutside_3"
+                insideAccordion={
+                  <Button
+                    href="https://drive.google.com/file/d/1qUCZ6CcVGeOr6qUBd4D2wPY9Y43neYeO/preview"
+                    target="_blank"
+                  >
+                    14 TIPS TO A SUCCESSFULL C&P EXAM
+                  </Button>
+                }
+              />
+            </Accordion>
+            <h1 style={{ marginTop: "5%" }}>
+              {" "}
+              SERVICE CONNECTED DISABILITIES WE CAN HELP WITH{" "}
+            </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="Service Connected Disabilities We Can Help With"
+                uniqueKey="mainOutside_3"
+                insideAccordion={
+                  <Button
+                    href="https://drive.google.com/file/d/1QGHe4iywYCNCfyekleUpVt6_tlZfaaS9/preview"
+                    target="_blank"
+                  >
+                    Serivice Connected Disabilities We Can Help With
+                  </Button>
+                }
+              />
+            </Accordion>
+
+            <h1 style={{ marginTop: "5%" }}> 100% Disability Benefits </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="100% Disability Benefits"
+                uniqueKey="mainOutside_3"
+                insideAccordion={
+                  <Button
+                    href="https://drive.google.com/file/d/16ylSPd0n_1R2vR9eF_hu73ZFvL5y8RKm/preview"
+                    target="_blank"
+                  >
+                    100% Disability Benefits
+                  </Button>
+                }
+              />
+            </Accordion>
+
+            <h1 style={{ marginTop: "5%" }}>
+              {" "}
+              11 Ways to Qualify for VA Dental{" "}
+            </h1>
+            <Accordion style={{ marginTop: "5%" }}>
+              <AccordionToModal
+                number={moreItems.length + 1}
+                title="100% Disability Benefits"
+                uniqueKey="mainOutside_3"
+                insideAccordion={
+                  <Button
+                    href="https://drive.google.com/file/d/11Pk9Hg-G2yoxlQr7KdwW9wWBIm5O0R5T/preview"
+                    target="_blank"
+                  >
+                    11 Ways to Qualify for VA Dental
+                  </Button>
+                }
               />
             </Accordion>
 

@@ -12,17 +12,12 @@ import { UpdateTracker } from "./Trackers/UpdateTracker";
 
 function Home() {
   const firebaseConfig = {
-    apiKey: "AIzaSyD_HKFcESvPZ2v6oPaMSVPAtGhvCGS3bWc",
-
-    authDomain: "wsdv-development.firebaseapp.com",
-
-    projectId: "wsdv-development",
-
-    storageBucket: "wsdv-development.appspot.com",
-
-    messagingSenderId: "978428886119",
-
-    appId: "1:978428886119:web:3d7247572fba40344628c2",
+    apiKey: "AIzaSyCYheISxbTluSeR1As2z5M0_rbdEQeA0dw",
+    authDomain: "wsdv-production-a0be7.firebaseapp.com",
+    projectId: "wsdv-production-a0be7",
+    storageBucket: "wsdv-production-a0be7.appspot.com",
+    messagingSenderId: "1002532901142",
+    appId: "1:1002532901142:web:b2799742e960d45bdc8037",
   };
 
   const app = initializeApp(firebaseConfig);
@@ -66,15 +61,25 @@ function Home() {
       <div className="forBackgroundOverlay2"></div>
       <section className="heroSection">
         <div className="heroTitle">
-          <h1>LETS BUILD YOUR</h1>
+          <h1 className="textWhite">LETS BUILD </h1>
+          <h1 className="textWhite">YOUR</h1>
           <h1 className="textWhite">STRATEGY</h1>
-          <p>
+          <p className="marginParagraph textWhite">
             Learn from our amazing coaches and build a winning strategy tailored
             to your success
           </p>
         </div>
 
-        <div className="ceoGreetings">
+        <div className="ceoGreetings textWhite">
+          <div className="videoGreeting">
+            <iframe
+              className="youtube-Greeting"
+              src="https://www.youtube.com/embed/Qgy6XJeVifo?autoplay=1"
+              title="YouTube video player"
+              frameborder="0"
+              allowfullscreen
+            />
+          </div>
           <p>
             Hello, and welcome to WSDV's portal! I'm Derek Jones, CEO of WSDV
             and am very excited to have an opportunity to change your life! Feel

@@ -8,21 +8,24 @@ import Schedule from "./Schedule";
 import Trainings from "./Trainings";
 import PrivateRoute from "./PrivateRoute";
 import Events from "./Events";
+import { DbProvider } from "../contexts/DbContext";
 
 function App() {
   return (
     <div>
       <Router>
         <AuthProvider>
-          <Switch>
-            <PrivateRoute exact path="/" component={Home} />
-            <PrivateRoute exact path="/home" component={Home} />
-            <PrivateRoute exact path="/videos" component={VideoLib} />
-            <PrivateRoute exact path="/schedule" component={Schedule} />
-            <PrivateRoute exact path="/trainings" component={Trainings} />
-            <PrivateRoute exact path="/events" component={Events} />
-            <Route path="/login" component={Login} />
-          </Switch>
+          <DbProvider>
+            <Switch>
+              <PrivateRoute exact path="/" component={Home} />
+              <PrivateRoute exact path="/home" component={Home} />
+              <PrivateRoute exact path="/videos" component={VideoLib} />
+              <PrivateRoute exact path="/schedule" component={Schedule} />
+              <PrivateRoute exact path="/trainings" component={Trainings} />
+              <PrivateRoute exact path="/events" component={Events} />
+              <Route path="/login" component={Login} />
+            </Switch>
+          </DbProvider>
         </AuthProvider>
       </Router>
     </div>
