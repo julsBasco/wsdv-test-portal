@@ -5,9 +5,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import SubHero from "./SubHero";
 import AccordionToModal from "./modals/AccordionToModal";
-import { Accordion, Container, Button } from "react-bootstrap";
+import { Accordion, Container, Button, Stack, Row, Col } from "react-bootstrap";
+import MainModal from "./modals/MainModal";
 import { UpdateData } from "./Trackers/UpdateData";
 import trainingBackground from "../img/training-background.jpg";
+import TrainingCard from "./cards/TrainingCard";
+import { trainingData } from "./data/pullThis";
 
 const Trainings = () => {
   const firebaseConfig = {
@@ -34,6 +37,7 @@ const Trainings = () => {
   const iFrameInAccordion = (url) => {
     return (
       <iframe
+        loading="lazy"
         src={url}
         width="100%"
         height="480"
@@ -96,6 +100,7 @@ const Trainings = () => {
       <NavBar />
 
       {/* Start of Useful Documents */}
+
       <div
         style={{
           backgroundImage: `url(${trainingBackground})`,
@@ -106,7 +111,7 @@ const Trainings = () => {
           height: "100vh",
           zIndex: "-1",
         }}
-      ></div>
+      />
 
       <div
         style={{
@@ -136,128 +141,19 @@ const Trainings = () => {
             </div>
           </div>
           <Container>
-            <h1 style={{ marginTop: "5%" }}>
-              14 MENTAL HEALTH SYMPTOMS EXPLAINED
-            </h1>
-            <Accordion style={{ marginTop: "5%" }}>
-              <AccordionToModal
-                number={moreItems.length + 1}
-                title="14 Mental Health Sypmtoms Explained"
-                uniqueKey="mainOutside_2"
-                insideAccordion={
-                  <Button
-                    href="https://drive.google.com/file/d/1jP099igPHfjkU-zLcIKd-hG3NZTf6mER/preview"
-                    target="_blank"
-                  >
-                    14 Mental Health Sypmtoms Explained
-                  </Button>
-                }
-              />
-            </Accordion>
-
-            <h1 style={{ marginTop: "5%" }}>THE LAY/BUDDY STATEMENT</h1>
-            <Accordion style={{ marginTop: "5%" }}>
-              <AccordionToModal
-                number={moreItems.length + 1}
-                title="The Lay Buddy Statement"
-                uniqueKey="mainOutside_7"
-                insideAccordion={iFrameInAccordion(
-                  "https://drive.google.com/file/d/16vDQ8WTG6biTMj2e1KMuwJ-n6KAK2LYE/preview"
-                )}
-              />
-            </Accordion>
-            <h1 style={{ marginTop: "5%" }}>
-              {" "}
-              HOW TO WRITE A PERSONAL STATEMENT{" "}
-            </h1>
-            <Accordion style={{ marginTop: "5%" }}>
-              <AccordionToModal
-                number={moreItems.length + 1}
-                title="Writing a Personal Statement"
-                uniqueKey="mainOutside_1"
-                insideAccordion={iFrameInAccordion(
-                  "https://drive.google.com/file/d/14e0Hzks5x1xz5OefJcaiaYmBaHYnWI7H/preview"
-                )}
-              />
-            </Accordion>
-
-            <h1 style={{ marginTop: "5%" }}>
-              14 TIPS TO A SUCCESSFULL C&P EXAM
-            </h1>
-            <Accordion style={{ marginTop: "5%" }}>
-              <AccordionToModal
-                number={moreItems.length + 1}
-                title="14 TIPS TO A SUCCESSFULL C&P EXAM"
-                uniqueKey="mainOutside_3"
-                insideAccordion={
-                  <Button
-                    href="https://drive.google.com/file/d/1qUCZ6CcVGeOr6qUBd4D2wPY9Y43neYeO/preview"
-                    target="_blank"
-                  >
-                    14 TIPS TO A SUCCESSFULL C&P EXAM
-                  </Button>
-                }
-              />
-            </Accordion>
-            <h1 style={{ marginTop: "5%" }}>
-              {" "}
-              SERVICE CONNECTED DISABILITIES WE CAN HELP WITH{" "}
-            </h1>
-            <Accordion style={{ marginTop: "5%" }}>
-              <AccordionToModal
-                number={moreItems.length + 1}
-                title="Service Connected Disabilities We Can Help With"
-                uniqueKey="mainOutside_3"
-                insideAccordion={
-                  <Button
-                    href="https://drive.google.com/file/d/1QGHe4iywYCNCfyekleUpVt6_tlZfaaS9/preview"
-                    target="_blank"
-                  >
-                    Serivice Connected Disabilities We Can Help With
-                  </Button>
-                }
-              />
-            </Accordion>
-
-            <h1 style={{ marginTop: "5%" }}> 100% Disability Benefits </h1>
-            <Accordion style={{ marginTop: "5%" }}>
-              <AccordionToModal
-                number={moreItems.length + 1}
-                title="100% Disability Benefits"
-                uniqueKey="mainOutside_3"
-                insideAccordion={
-                  <Button
-                    href="https://drive.google.com/file/d/16ylSPd0n_1R2vR9eF_hu73ZFvL5y8RKm/preview"
-                    target="_blank"
-                  >
-                    100% Disability Benefits
-                  </Button>
-                }
-              />
-            </Accordion>
-
-            <h1 style={{ marginTop: "5%" }}>
-              {" "}
-              11 Ways to Qualify for VA Dental{" "}
-            </h1>
-            <Accordion style={{ marginTop: "5%" }}>
-              <AccordionToModal
-                number={moreItems.length + 1}
-                title="100% Disability Benefits"
-                uniqueKey="mainOutside_3"
-                insideAccordion={
-                  <Button
-                    href="https://drive.google.com/file/d/11Pk9Hg-G2yoxlQr7KdwW9wWBIm5O0R5T/preview"
-                    target="_blank"
-                  >
-                    11 Ways to Qualify for VA Dental
-                  </Button>
-                }
-              />
-            </Accordion>
+            <Row>
+              {trainingData().map((data) => {
+                return (
+                  <Col lg={true} className="d-flex justify-content-center m-3">
+                    <TrainingCard {...data} />
+                  </Col>
+                );
+              })}
+            </Row>
 
             <h1 style={{ marginTop: "5%" }}> RATED CONDITIONS </h1>
 
+            <MainModal />
             <Accordion style={{ marginTop: "5%" }}>{moreItems}</Accordion>
 
             <h1 style={{ marginTop: "5%" }}> URGENT CARE BENEFIT </h1>
